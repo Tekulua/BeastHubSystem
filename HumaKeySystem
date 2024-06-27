@@ -45,7 +45,7 @@ local validUsers = {
     {name = "luffy_chope4", key = "carencia"}, -- Vagabundo Aleatorio
     {name = "Dark_King5328", key = "Gautambha"}, -- Vence Dia 26/07/24
     {name = "TralhaREE", key = "pipoca9797"} -- Permanente
-    {name = "Pichu_0131", key = "andrej12!"} -- Permanente
+    {name = "Pichu_0131", key = "andrej12!"} -- Vence Dia 27/07/24
 }
 
 getgenv().KeyInput = "string"
