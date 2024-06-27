@@ -43,12 +43,8 @@ local validUsers = {
     {name = "ZsimmulateTV", key = "nack2904"}, -- Permanente
     {name = "Moon98549", key = "Oct10162023"}, -- Permanente eu acho
     {name = "luffy_chope4", key = "carencia"}, -- Vagabundo Aleatorio
-    {name = "Dark_King5328", key = "Gautambha"} -- Vence Dia 26/07/24
-    {name = "TralhaREE", key = "pipoca9797"} --Permanente
-    {name = "", key = ""}
-    {name = "", key = ""}
-    {name = "", key = ""}
-    {name = "", key = ""}
+    {name = "Dark_King5328", key = "Gautambha"}, -- Vence Dia 26/07/24
+    {name = "TralhaREE", key = "pipoca9797"} -- Permanente
 }
 
 getgenv().KeyInput = "string"
