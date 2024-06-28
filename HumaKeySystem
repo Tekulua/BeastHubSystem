@@ -22,11 +22,6 @@ local Window = OrionLib:MakeWindow({
     IntroText = "Carregando Aguarde..."
 })
 
--- Function to load the main script if the key is correct
-function MakeScriptHub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Tekulua/HumaHubV1/main/HumaHubV1.txt"))()  
-end
-
 -- Notification for logged in user
 OrionLib:MakeNotification({
     Name = "Bem Vindo!",
@@ -45,21 +40,23 @@ local validUsers = {
     {name = "luffy_chope4", key = "carencia"}, -- Vagabundo Aleatorio
     {name = "Dark_King5328", key = "Gautambha"}, -- Vence Dia 26/07/24
     {name = "TralhaREE", key = "pipoca9797"}, -- Permanente
-    {name = "Pichu_0131", key = "andrej12!"} -- Vence Dia 27/07/24
+    {name = "Pichu_0131", key = "andrej12!"}, -- Vence Dia 27/07/24
+    {name = "extrasunx07", key = "+$++_"}, -- Vence Dia 28/07/24
+    {name = "YDarkManYT", key = "jpsilveraf23"} -- Vence Dia 28/07/24
 }
 
-getgenv().KeyInput = "string"
+getgenv().KeyInput = ""
 
 -- Create a tab for key input
 local Tab = Window:MakeTab({
-    Name = "Loggin",
+    Name = "Login",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 -- Textbox for entering the key
 Tab:AddTextbox({
-    Name = "Loggin",
+    Name = "KeyInput",
     Default = "",
     TextDisappear = true,
     Callback = function(Value)
@@ -77,11 +74,6 @@ local function IsValidUser(playerName, inputKey)
     return false
 end
 
--- Function to check if the player is an admin
-local function IsAdmin(playerName)
-    return playerName == "mayarameama" or playerName == "RAFACHEL13"
-end
-
 -- Function to play sound on button click
 local function PlayClickSound(soundId)
     local clickSound = Instance.new("Sound", SoundService)
@@ -92,11 +84,11 @@ end
 
 -- Button to check the entered key
 Tab:AddButton({
-    Name = "Checar Login",
+    Name = "Check Login",
     Callback = function()
         OrionLib:MakeNotification({
-            Name = "Checando Login",
-            Content = "Checando o login no banco de dados, aguarde...",
+            Name = "Checking Login",
+            Content = "Checking login in the database, please wait...",
             Image = "rbxassetid://18122662957",
             Time = 5
         })
@@ -105,24 +97,24 @@ Tab:AddButton({
         if IsValidUser(Player.Name, getgenv().KeyInput) then
             -- Correct login sound
             PlayClickSound("rbxassetid://3997124966")
-            wait(1)  -- Aguarda por 1 segundo antes de exibir a notificação de login correto
+            wait(1)
             OrionLib:MakeNotification({
-                Name = "Login Correto!",
-                Content = "O login inserido está correto!",
+                Name = "Login Successful!",
+                Content = "The entered login is correct!",
                 Image = "rbxassetid://18122662957",
                 Time = 5
             })
-            wait(1)  -- Aguarda mais 1 segundo antes de continuar
+            wait(1)
             OrionLib:Destroy()
-            wait(0.3)  -- Aguarda 0.3 segundos antes de continuar
+            wait(0.3)
             MakeScriptHub()
         else
             -- Incorrect login sound
             PlayClickSound("rbxassetid://2865228021")
-            wait(1)  -- Aguarda por 1 segundo antes de exibir a notificação de login incorreto
+            wait(1)
             OrionLib:MakeNotification({
-                Name = "Login Incorreto!",
-                Content = "O login inserido está incorreto.",
+                Name = "Incorrect Login!",
+                Content = "The entered login is incorrect.",
                 Image = "rbxassetid://18122662957",
                 Time = 5
             })
@@ -132,14 +124,18 @@ Tab:AddButton({
 
 -- Button to copy the Discord link for the key
 Tab:AddButton({
-    Name = "Cadastrar/Copiar Discord",
+    Name = "Copy Discord Link",
     Callback = function()
-        PlayClickSound("rbxassetid://876939830") -- Play the click sound when the button is pressed
+        PlayClickSound("rbxassetid://876939830")
         setclipboard("https://discord.gg/N7f8WRQc2G")
     end
 })
 
 -- Create the admin tab if the player is an admin
+local function IsAdmin(playerName)
+    return playerName == "mayarameama" or playerName == "RAFACHEL13"
+end
+
 if IsAdmin(Player.Name) then
     local AdminTab = Window:MakeTab({
         Name = "Admin",
