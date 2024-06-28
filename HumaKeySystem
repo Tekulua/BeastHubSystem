@@ -42,7 +42,7 @@ local validUsers = {
     {name = "TralhaREE", key = "pipoca9797"}, -- Permanente
     {name = "Pichu_0131", key = "andrej12!"}, -- Vence Dia 27/07/24
     {name = "extrasunx07", key = "+$++_"}, -- Vence Dia 28/07/24
-    {name = "YDarkManYT", key = "jpsilveraf23"} -- Vence Dia 28/07/24
+    {name = "YDarkManYT", key = "jpsilveiraf23"} -- Vence Dia 28/07/24
 }
 
 getgenv().KeyInput = ""
@@ -107,7 +107,7 @@ Tab:AddButton({
             wait(1)
             OrionLib:Destroy()
             wait(0.3)
-            MakeScriptHub()
+            -- Chamada para a função MakeScriptHub() ou outro código relevante após login bem-sucedido
         else
             -- Incorrect login sound
             PlayClickSound("rbxassetid://2865228021")
