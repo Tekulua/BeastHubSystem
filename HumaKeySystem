@@ -82,6 +82,11 @@ local function PlayClickSound(soundId)
     clickSound:Play()
 end
 
+-- Function to execute the script hub
+local function MakeScriptHub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Tekulua/HumaHubV1/main/HumaHubV1.txt"))()
+end
+
 -- Button to check the entered key
 Tab:AddButton({
     Name = "Check Login",
@@ -108,6 +113,7 @@ Tab:AddButton({
             OrionLib:Destroy()
             wait(0.3)
             -- Chamada para a função MakeScriptHub() ou outro código relevante após login bem-sucedido
+            MakeScriptHub()
         else
             -- Incorrect login sound
             PlayClickSound("rbxassetid://2865228021")
