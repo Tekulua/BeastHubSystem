@@ -47,7 +47,7 @@ OrionLib:MakeNotification({
 
 -- Define a lista de usuários válidos e suas respectivas chaves
 local validUsers = {
-    {name = "mayarameama", key = "admin"},
+    {name = "MayaraARMY", key = "admin"},
     {name = "RAFACHEL13", key = "admin"},
     {name = "KING_EGGzz", key = "zaquelgu"},
     {name = "ZsimmulateTV", key = "nack2904"},
