@@ -62,7 +62,7 @@ local validUsers = {
     {name = "lalkakajffad", key = "trevaxp"},
     {name = "wiwjsjksiei3ieie", key = "201008vh"},
     {name = "XMASTER_PRO3X", key = "patrickzendowski123"},
-    {name = "Syx1k", key = "black123"}
+    {name = "Syvus2", key = "black123"}
 }
 
 getgenv().KeyInput = "string"
