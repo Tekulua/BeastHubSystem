@@ -2,50 +2,50 @@ local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/ionl
 local Player = game.Players.LocalPlayer
 local SoundService = game:GetService("SoundService")
 
--- Function to play a sound
-local function PlaySound(soundId, volume)
+-- Função para tocar som
+local function PlayIntroSound()
     local success, err = pcall(function()
-        local sound = Instance.new("Sound", SoundService)
-        sound.SoundId = soundId
-        sound.Volume = volume or 1
-        sound:Play()
+        local introSound = Instance.new("Sound", SoundService)
+        introSound.SoundId = "rbxassetid://1846396460"
+        introSound.Volume = 1
+        introSound:Play()
     end)
     if not success then
-        warn("Error playing sound: " .. err)
+        warn("Erro ao tocar som de introdução: " .. err)
     end
 end
 
--- Play the intro sound immediately
-PlaySound("rbxassetid://1846396460")
+-- Toca o som de introdução imediatamente
+PlayIntroSound()
 
--- Create the main window after playing the intro sound
+-- Cria a janela após tocar o som de introdução
 local Window = OrionLib:MakeWindow({
     Name = "HumaHubKeySystem",
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "OrionTest",
-    IntroText = "Loading, please wait..."
+    IntroText = "Carregando Aguarde..."
 })
 
--- Function to load the main script if the key is correct
-local function LoadMainScript()
+-- Função para carregar o script principal se a chave estiver correta
+local function MakeScriptHub()
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Tekulua/HumaHubV1/main/HumaHubV1.txt"))()
     end)
     if not success then
-        warn("Error loading main script: " .. err)
+        warn("Erro ao carregar script principal: " .. err)
     end
 end
 
--- Notify the user to log in
+-- Notificação para usuário logado
 OrionLib:MakeNotification({
-    Name = "Login Required!",
-    Content = "You need a key, " .. Player.Name .. ".",
+    Name = "Para Logar!",
+    Content = "Você precisa de uma Key, " .. Player.Name .. ".",
     Image = "rbxassetid://4483345998",
     Time = 5
 })
 
--- Define valid users and their respective keys
+-- Define a lista de usuários válidos e suas respectivas chaves
 local validUsers = {
     {name = "MayaraARMY", key = "admin"},
     {name = "RAFACHEL13", key = "admin"},
@@ -62,21 +62,22 @@ local validUsers = {
     {name = "lalkakajffad", key = "trevaxp"},
     {name = "wiwjsjksiei3ieie", key = "201008vh"},
     {name = "XMASTER_PRO3X", key = "patrickzendowski123"},
-    {name = "Syvus2", key = "black123"}
+    {name = "Syx1k", key = "black123"},
+    {name = "kIneCbASfIN", key = "17072007"}
 }
 
 getgenv().KeyInput = "string"
 
--- Create a tab for key input
+-- Cria uma aba para inserção da chave
 local Tab = Window:MakeTab({
-    Name = "Login",
+    Name = "Loggin",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
--- Textbox for key input
+-- Caixa de texto para inserir a chave
 Tab:AddTextbox({
-    Name = "Login",
+    Name = "Loggin",
     Default = "",
     TextDisappear = true,
     Callback = function(Value)
@@ -84,7 +85,7 @@ Tab:AddTextbox({
     end
 })
 
--- Function to validate user
+-- Função para verificar se a chave e o nome do jogador são válidos
 local function IsValidUser(name, key)
     for _, user in ipairs(validUsers) do
         if user.name == name and user.key == key then
@@ -94,37 +95,52 @@ local function IsValidUser(name, key)
     return false
 end
 
--- Button to verify login
+-- Função para tocar som de clique
+local function PlayClickSound(soundId)
+    local success, err = pcall(function()
+        local clickSound = Instance.new("Sound", SoundService)
+        clickSound.SoundId = soundId
+        clickSound.Volume = 1
+        clickSound:Play()
+    end)
+    if not success then
+        warn("Erro ao tocar som de clique: " .. err)
+    end
+end
+
+-- Botão para fazer login com a chave inserida
 Tab:AddButton({
-    Name = "Verify Login",
+    Name = "Verificar Login",
     Callback = function()
         OrionLib:MakeNotification({
-            Name = "Checking Login...",
-            Content = "Checking login in the database, please wait...",
+            Name = "Checando Login...",
+            Content = "Checando o login no banco de dados, aguarde...",
             Image = "rbxassetid://4483345998",
             Time = 5
         })
 
-        -- Play sounds based on login result
+        -- Toca sons diferentes com base no resultado do login
         if IsValidUser(Player.Name, getgenv().KeyInput) then
-            PlaySound("rbxassetid://3997124966") -- Correct login sound
-            wait(1)  -- Wait for 1 second before showing the correct login notification
+            -- Som de login correto
+            PlayClickSound("rbxassetid://3997124966")
+            wait(1)  -- Aguarda por 1 segundo antes de exibir a notificação de login correto
             OrionLib:MakeNotification({
-                Name = "Login Successful!",
-                Content = "The entered login is correct!",
+                Name = "Loggin Correto!",
+                Content = "O login inserido está correto!",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
-            wait(1)  -- Wait for another second before continuing
+            wait(1)  -- Aguarda mais 1 segundo antes de continuar
             OrionLib:Destroy()
-            wait(0.3)  -- Wait for 0.3 seconds before continuing
-            LoadMainScript()
+            wait(0.3)  -- Aguarda 0.3 segundos antes de continuar
+            MakeScriptHub()
         else
-            PlaySound("rbxassetid://2865228021") -- Incorrect login sound
-            wait(1)  -- Wait for 1 second before showing the incorrect login notification
+            -- Som de login incorreto (usando o ID de som fornecido)
+            PlayClickSound("rbxassetid://2865228021")
+            wait(1)  -- Aguarda por 1 segundo antes de exibir a notificação de login incorreto
             OrionLib:MakeNotification({
-                Name = "Login Failed!",
-                Content = "The entered login is incorrect.",
+                Name = "Loggin Incorreto!",
+                Content = "O login inserido está incorreto.",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
@@ -132,18 +148,18 @@ Tab:AddButton({
     end
 })
 
--- Button to copy Discord link for key registration
+-- Botão para copiar o link do Discord para obter a chave
 Tab:AddButton({
-    Name = "Register/Copy Discord",
+    Name = "Cadastrar/Copiar Discord",
     Callback = function()
-        PlaySound("rbxassetid://876939830") -- Play click sound when button is pressed
+        PlayClickSound("rbxassetid://876939830") -- Toca o som de clique quando o botão é pressionado
         setclipboard("https://discord.gg/N7f8WRQc2G")
     end
 })
 
--- Function to check if player is admin
+-- Função para verificar se o jogador é admin
 local function IsAdmin(name)
-    local adminUsers = {"mayarameama", "RAFACHEL13"} -- Add admin names here
+    local adminUsers = {"mayarameama", "RAFACHEL13"} -- Adicione nomes de administradores aqui
     for _, admin in ipairs(adminUsers) do
         if admin == name then
             return true
@@ -152,7 +168,7 @@ local function IsAdmin(name)
     return false
 end
 
--- Create admin tab if player is an admin
+-- Cria a aba de admin se o jogador for um admin
 if IsAdmin(Player.Name) then
     local AdminTab = Window:MakeTab({
         Name = "Admin",
@@ -161,7 +177,7 @@ if IsAdmin(Player.Name) then
     })
     
     AdminTab:AddLabel("Admin Commands Here")
-    -- Add more admin functionalities as needed
+    -- Adicione mais funcionalidades de admin conforme necessário
 end
 
 OrionLib:Init()
