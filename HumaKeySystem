@@ -65,7 +65,11 @@ local validUsers = {
     {name = "Syvus2", key = "black123"},
     {name = "kIneCbASfIN", key = "17072007"},
     {name = "torriewest63l2", key = "pipoca123"},
-    {name = "InimigoDoCombo", key = "trxshkkz"}
+    {name = "InimigoDoCombo", key = "trxshkkz"},
+    {name = "tarquinio728727YT", key = "minhamaee1"},
+    {name = "joaollucasdc", key = "jjll123777"},
+    {name = "Satoru_Slay3r", key = "muriloana"},
+    {name = "XLZBlackXLZ", key = "Night99845567"}
 }
 
 -- Função para adicionar novos usuários
