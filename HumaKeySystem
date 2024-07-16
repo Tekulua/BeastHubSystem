@@ -52,7 +52,7 @@ local validUsers = {
     {name = "joaollucasdc", key = "jjll123777"}, -- PERMANENTE
     {name = "0biel_Gow0", key = "9090"}, -- 09/08/2024
     {name = "HoaitriOujB10", key = "Juliocesar1#"}, -- 15/08/2024
-    {name = "tarquinio728727YT ", key = "minhamaee1"}, -- 08/08/2024
+    {name = "tarquinio728727YT", key = "minhamaee1"}, -- 08/08/2024
     {name = "Kawanzinh_12", key = "AD788493@"}, -- 15/08/2024
     {name = "Syvus2", key = "Black123"}, -- 08/08/2024
     {name = "mateiopedro", key = "Paodebatata123!"}, -- 14/08/2024
@@ -63,7 +63,7 @@ local validUsers = {
     {name = "Satoru_Slay3r", key = "muriloana"}, -- 09/08/2024
     {name = "OtavioMIT3", key = "Ot4854"}, -- 09/08/2024
     {name = "ghjklgf", key = "senha123"}, -- 09/08/2024
-    {name = "mcl7", key = "Rona2505"} -- 11/08/2024
+    {name = "mcl7", key = "Rona2505"}, -- 11/08/2024
     {name = "BorutoDoidao", key = "euqueroitemchampionpfnaoaguentomais"} -- 11/08/2024
 }
 
