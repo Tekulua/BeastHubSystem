@@ -56,11 +56,11 @@ local validUsers = {
     {name = "Kawanzinh_12", key = "AD788493@"}, -- 15/08/2024
     {name = "Syvus2", key = "Black123"}, -- 08/08/2024
     {name = "mateiopedro", key = "Paodebatata123!"}, -- 14/08/2024
-    {name = "ofwiressht", key = "ceostoblame123"} -- 10/08/2024
-    {name = "iTz_Huskeyy", key = "090600"}, -- 24/08/2024\
+    {name = "ofwiressht", key = "ceostoblame123"}, -- 10/08/2024
+    {name = "iTz_Huskeyy", key = "090600"}, -- 24/08/2024
     {name = "InimigoDoCombo", key = "trxshkkz"}, -- 09/08/2024
     {name = "TheGamesBrasilYT", key = "games2000"}, -- 13/08/2024
-    {name = "Satoru_Slay3r", key = "muriloana"}, -- 09/08/2024
+    {name = "Satoru_Slay3r", key = "muriloana"} -- 09/08/2024
 }
 
 -- Função para adicionar novos usuários
@@ -180,4 +180,3 @@ if IsAdmin(Player.Name) then
 end
 
 OrionLib:Init()
-
