@@ -49,29 +49,12 @@ OrionLib:MakeNotification({
 local validUsers = {
     {name = "MayaraARMY", key = "admin"},
     {name = "RAFACHEL13", key = "admin"},
-    {name = "KING_EGGzz", key = "zaquelgu"},
-    {name = "ZsimmulateTV", key = "nack2904"},
-    {name = "Moon98549", key = "Oct10162023"},
-    {name = "luffy_chope4", key = "carencia"},
-    {name = "Dark_King5328", key = "Gautambha"},
-    {name = "TralhaREE", key = "pipoca9797"},
-    {name = "Pichu_0131", key = "andrej12!"},
-    {name = "Hivz562", key = "$Jeremiah262@"},
-    {name = "YDarkManYT", key = "jpsilveiraf23"},
-    {name = "matheus_wolf321", key = "brasil"},
-    {name = "lalkakajffad", key = "trevaxp"},
-    {name = "wiwjsjksiei3ieie", key = "201008vh"},
-    {name = "XMASTER_PRO3X", key = "patrickzendowski123"},
-    {name = "Syvus2", key = "black123"},
-    {name = "kIneCbASfIN", key = "17072007"},
-    {name = "torriewest63l2", key = "pipoca123"},
-    {name = "InimigoDoCombo", key = "trxshkkz"},
-    {name = "tarquinio728727YT", key = "minhamaee1"},
     {name = "joaollucasdc", key = "jjll123777"},
-    {name = "Satoru_Slay3r", key = "muriloana"},
-    {name = "XLZBlackXLZ", key = "Night99845567"},
-    {name = "WWWWEEEETT22", key = "123456780"},
-    {name = "vinibleik", key = "neymar23"}
+    {name = "0biel_gow0", key = "9090"},
+    {name = "HoaitriOujB10", key = "Juliocesar1#"},
+    {name = "tarquinio728727YT ", key = "minhamaee1"},
+    {name = "Kawanzinh_12", key = "AD788493@"},
+    {name = "Syvus2", key = "Black123"}
 }
 
 -- Função para adicionar novos usuários
@@ -132,25 +115,22 @@ Tab:AddButton({
             Time = 5
         })
 
-        -- Toca sons diferentes com base no resultado do login
         if IsValidUser(Player.Name, getgenv().KeyInput) then
-            -- Som de login correto
             PlayClickSound("rbxassetid://3997124966")
-            wait(1)  -- Aguarda por 1 segundo antes de exibir a notificação de login correto
+            wait(1)
             OrionLib:MakeNotification({
                 Name = "Loggin Correto!",
                 Content = "O login inserido está correto!",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
-            wait(1)  -- Aguarda mais 1 segundo antes de continuar
+            wait(1)
             OrionLib:Destroy()
-            wait(0.3)  -- Aguarda 0.3 segundos antes de continuar
+            wait(0.3)
             MakeScriptHub()
         else
-            -- Som de login incorreto (usando o ID de som fornecido)
             PlayClickSound("rbxassetid://2865228021")
-            wait(1)  -- Aguarda por 1 segundo antes de exibir a notificação de login incorreto
+            wait(1)
             OrionLib:MakeNotification({
                 Name = "Loggin Incorreto!",
                 Content = "O login inserido está incorreto.",
@@ -165,14 +145,14 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "Cadastrar/Copiar Discord",
     Callback = function()
-        PlayClickSound("rbxassetid://876939830") -- Toca o som de clique quando o botão é pressionado
+        PlayClickSound("rbxassetid://876939830")
         setclipboard("https://discord.gg/N7f8WRQc2G")
     end
 })
 
 -- Função para verificar se o jogador é admin
 local function IsAdmin(name)
-    local adminUsers = {"mayarameama", "RAFACHEL13"} -- Adicione nomes de administradores aqui
+    local adminUsers = {"MayaraARMY", "RAFACHEL13"}
     for _, admin in ipairs(adminUsers) do
         if admin == name then
             return true
