@@ -70,7 +70,8 @@ local validUsers = {
     {name = "XLZBlackXLZ", key = "Night99845567"}, -- PERMANENTE
     {name = "Moon98549", key = "Oct10162023"}, -- PERMANENTE
     {name = "ryanzinhouva411", key = "pit244"}, -- 17/08/2024
-    {name = "wiwjsjksiei3ieie", key = "201008vh"} -- 30/06/2024
+    {name = "wiwjsjksiei3ieie", key = "201008vh"}, -- 30/06/2024
+    {name = "Pizano6643", key = "2009"} -- PERMANENTE
 }
 
 -- Função para adicionar novos usuários
