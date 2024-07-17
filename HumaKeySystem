@@ -66,7 +66,11 @@ local validUsers = {
     {name = "mcl7", key = "Rona2505"}, -- 11/08/2024
     {name = "BorutoDoidao", key = "euqueroItemChampion1#"}, -- PERMANENTE
     {name = "Gregory_Vladislav", key = "euqueroItemChampion2@"}, -- PERMANENTE
-    {name = "6a108z6", key = "Herar187463"} -- 16/08/2024
+    {name = "6a108z6", key = "Herar187463"}, -- 16/08/2024
+    {name = "XLZBlackXLZ", key = "Night99845567"}, -- PERMANENTE
+    {name = "Moon98549", key = "Oct10162023"}, -- PERMANENTE
+    {name = "ryanzinhouva411", key = "pit244"}, -- 17/08/2024
+    {name = "wiwjsjksiei3ieie", key = "201008vh"} -- 30/06/2024
 }
 
 -- Função para adicionar novos usuários
